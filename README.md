@@ -71,3 +71,4 @@ Go to :
 -   Add Verifications on create and update for author fk exists
 -   On Author delete, delete all books
 -   Run on different env, for prod and dev, using different .env files etc... (permit to use one prod db and one test db, independants)
+-   Add encrypt and decrypt entity during res and req, using the same methods and keys
