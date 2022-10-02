@@ -66,6 +66,10 @@ Go to :
 
 > To switch vars, press tab
 
+## Unit tests
+
+npm run dev in first terminal, npm run test on second.
+
 ## To-Do
 
 -   Add encrypt and decrypt entity during res and req, using the same methods and keys
