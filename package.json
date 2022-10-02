@@ -6,13 +6,14 @@
     "scripts": {
         "dev": "nodemon --watch src -e js,ts,json --exec \"ts-node src/server.ts\"",
         "build": "rimraf build && tsc",
-        "start": "node build/server.js",
-        "build:start": "npm run build && node build/server.js"
+        "start": "cross-env NODE_ENV='production' node build/server.js",
+        "build:start": "npm run build && npm start"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "chalk": "^4.1.2",
+        "cross-env": "^7.0.3",
         "dotenv": "^16.0.3",
         "express": "^4.18.1",
         "joi": "^17.6.2",

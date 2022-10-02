@@ -2,6 +2,15 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+let path;
+if (process.env.NODE_ENV === 'production') {
+    path = `${__dirname}/../../.env.production`;
+} else {
+    path = `${__dirname}/../../.env.development`;
+}
+
+dotenv.config({ path: path });
+
 const MONGO_USERNAME: string = process.env.MONGO_USERNAME || '';
 const MONGO_PASSWORD: string = process.env.MONGO_PASSWORD || '';
 const MONGO_NAME: string = process.env.MONGO_NAME || '';

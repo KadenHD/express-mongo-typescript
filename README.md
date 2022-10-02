@@ -10,7 +10,7 @@ Install the node modules
 npm i
 ```
 
-Create a .env file at the root of the project :
+Create a .env.production and .env.development file at the root of the project :
 
 ```txt
 MONGO_USERNAME=''
@@ -68,5 +68,4 @@ Go to :
 
 ## To-Do
 
--   Run on different env, for prod and dev, using different .env files etc... (permit to use one prod db and one test db, independants)
 -   Add encrypt and decrypt entity during res and req, using the same methods and keys

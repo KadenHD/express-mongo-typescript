@@ -2,6 +2,7 @@
 build
 node_modules
 .env
+.env.*
 
 # PhpStorm
 .idea
