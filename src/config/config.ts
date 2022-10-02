@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import ip from 'ip';
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ const MONGO_NAME: string = process.env.MONGO_NAME || '';
 const MONGO_URL: string = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.f3sohen.mongodb.net/${MONGO_NAME}`;
 
 const SERVER_PORT: number = process.env.SERVER_PORT ? Number(process.env.SERVER_PORT) : 3000;
+const SERVER_HOST: string = `http://${ip.address()}:${SERVER_PORT}` || `http://localhost:${SERVER_PORT}`;
 
 interface IConfig {
     mongo: {
@@ -25,6 +27,7 @@ interface IConfig {
     };
     server: {
         port: number;
+        host: string;
     };
 }
 
@@ -34,6 +37,7 @@ export const config: IConfig = {
         name: MONGO_NAME
     },
     server: {
-        port: SERVER_PORT
+        port: SERVER_PORT,
+        host: SERVER_HOST
     }
 };
