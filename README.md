@@ -68,10 +68,21 @@ Go to :
 
 ## Unit tests
 
-npm run dev in first terminal, npm run test on second.
+-   Open Two terminals
+-   run on first terminal:
+
+```txt
+npm run dev
+```
+
+-   run on second terminal:
+
+```txt
+npm run test
+```
 
 ## To-Do
 
--   Add encrypt and decrypt entity during res and req, using the same methods and keys
 -   Add library unit tests
+-   Add encrypt and decrypt entity during res and req, using the same methods and keys
 -   Add every requests unit tests
