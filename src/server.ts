@@ -12,11 +12,11 @@ const router: Express = express();
 mongoose
     .connect(config.mongo.url, { retryWrites: true, w: 'majority' })
     .then(() => {
-        Logging.info('Connected to mongoDB');
+        Logging.info(`Connected to mongoDB, using '${config.mongo.name}' DataBase.`);
         StartServer();
     })
     .catch((error) => {
-        Logging.error('Unable to connect: ');
+        Logging.error('Unable to connect to mongoDB : ');
         Logging.error(error);
     });
 
@@ -45,7 +45,7 @@ const StartServer = () => {
 
     /** Error handling */
     router.use((req: Request, res: Response, next: NextFunction) => {
-        const error: Error = new Error('not found');
+        const error: Error = new Error('Not found');
         Logging.error(error);
 
         return res.status(404).json({ message: error.message });
