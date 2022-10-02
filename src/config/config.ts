@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-let path;
+let path: string;
 if (process.env.NODE_ENV === 'production') {
     path = `${__dirname}/../../.env.production`;
 } else {
@@ -21,6 +21,7 @@ const SERVER_PORT: number = process.env.SERVER_PORT ? Number(process.env.SERVER_
 interface IConfig {
     mongo: {
         url: string;
+        name: string;
     };
     server: {
         port: number;
@@ -29,7 +30,8 @@ interface IConfig {
 
 export const config: IConfig = {
     mongo: {
-        url: MONGO_URL
+        url: MONGO_URL,
+        name: MONGO_NAME
     },
     server: {
         port: SERVER_PORT
