@@ -69,3 +69,5 @@ Go to :
 ## To-Do
 
 -   Add encrypt and decrypt entity during res and req, using the same methods and keys
+-   Add library unit tests
+-   Add every requests unit tests
